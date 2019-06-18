@@ -1,0 +1,55 @@
+
+<div class="col-md-5">
+<div class="col-md-12">
+	<div class="panel panel-default">
+		<div class="panel-heading">网站热帖</div>
+			<ul class="list-group">
+                 {volist name="clickres" id="vo"}
+				<li class="list-group-item">					<!--右浮动pull-right-->
+					<a title="{$vo.title}" target="_self" href="{:url('article/index',array('arid'=>$vo.id))}"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;{$vo.title}</a>
+				</li>
+				 {/volist}
+			</ul>
+	</div>
+</div>
+
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">推荐阅读</div>
+            <ul class="list-group">
+                 {volist name="tjres" id="vo"}
+                <li class="list-group-item">                    <!--右浮动pull-right-->
+                    <a title="{$vo.title}" target="_self" href="http://www.zhangduanjian.top/index.php/index/article/index?arid={$vo.id}"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;&nbsp;{$vo.title}</a>
+                </li>
+                 {/volist}
+            </ul>
+    </div>
+</div>
+
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">友情链接</div>
+            <ul class="list-group">
+                 {volist name="links" id="vo"}
+                <li class="list-group-item">                    <!--右浮动pull-right-->
+                    <a title="{$vo.url}" target="_self" href="{:url('article/index',array('arid'=>$vo.id))}"><span class="glyphicon glyphicon-link"></span>&nbsp;&nbsp;{$vo.url}</a>
+                </li>
+                 {/volist}
+            </ul>
+    </div>
+</div>
+
+ <div class="col-md-12">
+  <div class="input-group">
+    <form id="bdcs-search-form" autocomplete="off" class="bdcs-search-form" target="_self" method="get" action="{:url('Search/index')}"> 
+    <input placeholder="请输入关键词" name="keywords" autocomplete="off" type="text" class="form-control" />
+     <span class="input-group-btn btn_rig">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </span>
+    </form>
+</div>
+    </div>
+ </div>
+
+ </div>
+
